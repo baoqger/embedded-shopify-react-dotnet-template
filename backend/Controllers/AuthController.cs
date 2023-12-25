@@ -17,7 +17,7 @@ public class AuthController : ControllerBase
     private readonly bool IS_EMBEDDED = true;
 
     private readonly List<AuthorizationScope> _scopes =
-        new()
+        new List<AuthorizationScope>
         {
             AuthorizationScope.ReadProductListings,
             AuthorizationScope.ReadProducts,

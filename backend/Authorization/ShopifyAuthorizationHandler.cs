@@ -29,6 +29,7 @@ public class ShopifyAuthorizationHandler : IAuthorizationMiddlewareResultHandler
         PolicyAuthorizationResult authorizeResult
     )
     {
+
         if (!authorizeResult.Succeeded)
         {
             await defaultHandler.HandleAsync(next, context, policy, authorizeResult);

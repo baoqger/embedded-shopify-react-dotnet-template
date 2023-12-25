@@ -2,6 +2,7 @@ using System.Text;
 using backend.Authorization;
 using backend.Config;
 using backend.Services;
+using backend.Middlewares;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 
@@ -57,6 +58,8 @@ builder.Services
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+app.UseMiddleware<RequestLoggingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
